@@ -1,0 +1,2 @@
+module CategoryGamesHelper
+end

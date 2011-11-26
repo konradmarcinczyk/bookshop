@@ -1,4 +1,125 @@
 Bookshop::Application.routes.draw do
+
+  get "publishers/index"
+
+  get "publishers/show"
+
+  get "publishers/new"
+
+  get "publishers/edit"
+
+  get "publishers/destroy"
+
+  get "books/index"
+
+  get "books/show"
+
+  get "books/new"
+
+  get "books/edit"
+
+  get "books/destroy"
+
+  get "category_books/index"
+
+  get "category_books/show"
+
+  get "category_books/new"
+
+  get "category_books/edit"
+
+  get "category_books/destroy"
+
+  get "subcategory_books/index"
+
+  get "subcategory_books/show"
+
+  get "subcategory_books/new"
+
+  get "subcategory_books/edit"
+
+  get "subcategory_books/destroy"
+
+  get "category_accessories/index"
+
+  get "category_accessories/show"
+
+  get "category_accessories/new"
+
+  get "category_accessories/edit"
+
+  get "category_accessories/destroy"
+
+  get "accessories/index"
+
+  get "accessories/show"
+
+  get "accessories/new"
+
+  get "accessories/edit"
+
+  get "accessories/destroy"
+
+  get "games/index"
+
+  get "games/show"
+
+  get "games/new"
+
+  get "games/edit"
+
+  get "games/destroy"
+
+  get "category_games/index"
+
+  get "category_games/show"
+
+  get "category_games/new"
+
+  get "category_games/edit"
+
+  get "category_games/destroy"
+
+  get "subcategory_games/index"
+
+  get "subcategory_games/show"
+
+  get "subcategory_games/new"
+
+  get "subcategory_games/edit"
+
+  get "subcategory_games/destroy"
+
+  get "games_category/index"
+
+  get "games_category/show"
+
+  get "games_category/new"
+
+  get "games_category/edit"
+
+  get "games_category/destroy"
+
+  get "games_subcategory/index"
+
+  get "games_subcategory/show"
+
+  get "games_subcategory/new"
+
+  get "games_subcategory/edit"
+
+  get "games_subcategory/destroy"
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  root :to => 'home#index'
+  get "users/index"
+
+  devise_for :users
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

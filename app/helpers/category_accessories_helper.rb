@@ -1,0 +1,2 @@
+module CategoryAccessoriesHelper
+end
