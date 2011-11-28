@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128175020) do
+ActiveRecord::Schema.define(:version => 20111128214734) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "opis"
     t.float    "price"
+    t.integer  "category_accessories_id"
+    t.text     "description"
   end
 
   create_table "books", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "size"
     t.integer  "isbn"
     t.string   "translation"
     t.integer  "year_of_publishing"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20111128175020) do
     t.float    "price"
     t.text     "description"
     t.string   "language"
+    t.integer  "category_books_id"
+    t.string   "size"
   end
 
   create_table "category_accessories", :force => true do |t|
@@ -47,12 +49,14 @@ ActiveRecord::Schema.define(:version => 20111128175020) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "subcategory_books_id"
   end
 
   create_table "category_games", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "subcategory_games_id"
   end
 
   create_table "games", :force => true do |t|
@@ -71,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20111128175020) do
     t.integer  "game_time_to"
     t.text     "description"
     t.string   "language"
+    t.integer  "category_games_id"
   end
 
   create_table "games_categories", :force => true do |t|
