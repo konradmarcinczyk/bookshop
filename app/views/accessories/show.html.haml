@@ -1,0 +1,14 @@
+.post
+  %h2.title
+    = @accessory.name
+    %br
+    Cena : 
+    = @accessory.price
+    zł
+    %br
+    Opis : 
+    = @accessory.description
+
+
+%p
+= link_to "Pokaż wszystkie akcesoria", accessories_path

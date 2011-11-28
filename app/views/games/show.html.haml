@@ -1,0 +1,45 @@
+.post
+  %h2.title
+    = @game.name
+    %br
+    Cena : 
+    = @game.price
+    zł
+    %br
+    Gatunek gry : 
+    = @game.game_type
+    %br
+    Wydawca : 
+    = @game.publisher
+    %br
+    Język wydania : 
+    = @game.language
+    %br
+    Wiek graczy od 
+    = @game.age_of_players_from
+    %br
+    Liczba graczy od 
+    = @game.number_of_players_from
+    do 
+    = @game.number_of_players_to
+    %br
+    Instrukcje:
+    = @game.instruction
+    %br
+    Opis : 
+    = @game.description
+    Czas gry: 
+    - unless (@game.game_time.blank?)
+      ok.
+      = @game.game_time
+    end
+    - if not (@game.game_time.blank?)
+      od 
+      = @game.game_time_from
+      do
+      = @game.game_time_to
+    end
+-#jakaś walidacja? czs gry w minutach???
+
+%p
+= link_to "Pokaż wszystkie gry", games_path

@@ -1,0 +1,9 @@
+%h1
+  Gry:
+- for game in @games 
+  .post
+  %h2.title
+    = link_to game.name, game_path(game)
+    %p.meta
+      Cena: #{game.price}
+      Gatunek gry: #{game.game_type}

@@ -1,0 +1,39 @@
+.post
+  %h2.title
+    = @book.title
+    %br
+    Autor:
+    = @book.author
+    %br
+    Cena : 
+    = @book.price
+    zł
+    %br
+    Wydawca : 
+    = @book.publisher
+    %br
+    Język wydania : 
+    = @book.language
+    %br
+    Wymiary :
+    = @book.size
+    %br
+    Numer ISBN :
+    = @book.isbn
+    %br
+    Opis : 
+    = @book.description
+    %br
+    - unless (@book.translation.blank?)
+      Tłumaczenie : 
+      = @book.translation
+    %br
+    end
+    Rok wydania :
+    = @book.year_of_publishing
+    %br
+    Liczba stron :
+    = @book.number_of_pages
+
+%p
+= link_to "Pokaż wszystkie książki", books_path

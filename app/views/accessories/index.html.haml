@@ -1,0 +1,8 @@
+%h1
+  Akcesoria:
+- for accessory in @accessories 
+  .post
+  %h2.title
+    = link_to accessory.name, accessory_path(accessory)
+    %p.meta
+      Cena: #{accessory.price}
