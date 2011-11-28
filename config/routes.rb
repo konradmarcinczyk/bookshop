@@ -1,13 +1,13 @@
 Bookshop::Application.routes.draw do
 
+  resources :books
+  resources :games
+  resources :accessories
+
   get "products/index"
-
   get "products/show"
-
   get "products/new"
-
   get "products/edit"
-
   get "products/destroy"
 
   root :to => 'home#index'
