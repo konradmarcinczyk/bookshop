@@ -11,18 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128120607) do
+ActiveRecord::Schema.define(:version => 20111128124416) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "opis"
+    t.float    "price"
   end
 
   create_table "books", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "size"
+    t.integer  "isbn"
+    t.string   "translation"
+    t.integer  "year_of_publishing"
+    t.integer  "number_of_pages"
+    t.string   "publisher"
+    t.string   "author"
+    t.text     "opis"
+    t.float    "price"
   end
 
   create_table "category_accessories", :force => true do |t|
@@ -47,6 +58,15 @@ ActiveRecord::Schema.define(:version => 20111128120607) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "instruction"
+    t.string   "game_type"
+    t.string   "number_of_players"
+    t.string   "age_of_players"
+    t.string   "game_time"
+    t.string   "publisher"
+    t.string   "edition"
+    t.text     "opis"
+    t.float    "price"
   end
 
   create_table "games_categories", :force => true do |t|
@@ -57,6 +77,11 @@ ActiveRecord::Schema.define(:version => 20111128120607) do
 
   create_table "games_subcategories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,8 @@
-%h1 Logowanie
-- if user_signed_in?
-	Witaj,
-	= current_user.email
-	= link_to "Wyloguj", destroy_user_session_path, :method => "delete"
-- else
-	= link_to "Zaloguj", new_user_session_path
+%h1 BookShop
+-#%h1 Logowanie
+-#- if user_signed_in?
+-#	Witaj,
+-#	= current_user.email
+-#	= link_to "Wyloguj", destroy_user_session_path, :method => "delete"
+-#- else
+-#	= link_to "Zaloguj", new_user_session_path
