@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128124416) do
+ActiveRecord::Schema.define(:version => 20111128153952) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -60,13 +60,15 @@ ActiveRecord::Schema.define(:version => 20111128124416) do
     t.datetime "updated_at"
     t.text     "instruction"
     t.string   "game_type"
-    t.string   "number_of_players"
-    t.string   "age_of_players"
     t.string   "game_time"
     t.string   "publisher"
     t.string   "edition"
     t.text     "opis"
     t.float    "price"
+    t.integer  "number_of_players_from"
+    t.integer  "number_of_players_to"
+    t.integer  "age_of_players_from"
+    t.integer  "age_of_players_to"
   end
 
   create_table "games_categories", :force => true do |t|
