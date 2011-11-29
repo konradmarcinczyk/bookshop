@@ -1,5 +1,9 @@
 Bookshop::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :books
   resources :games
   resources :accessories
@@ -68,10 +72,6 @@ Bookshop::Application.routes.draw do
   get "games_subcategory/edit"
   get "games_subcategory/destroy"
 
-
- # ActiveAdmin.routes(self)
-
-  #devise_for :admin_users, ActiveAdmin::Devise.config
 
 #  get "users/index"
 
