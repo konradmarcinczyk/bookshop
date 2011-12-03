@@ -1,3 +1,4 @@
 class SubcategoryGame < ActiveRecord::Base
-  has_many :category_games
+   belongs_to :category_game  
+   has_many :games
 end

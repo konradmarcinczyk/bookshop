@@ -1,4 +1,11 @@
 pl:
+  active_admin:
+    dashboard: "Panel administratora"
+    dashboard_welcome:
+      welcome: "Witaj"
+      call_to_action: "Wybierz akcję z menu"
+    blank_slate:
+      content: "Zawartość"
   number:
     format:
       separator: ","

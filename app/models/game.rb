@@ -1,4 +1,4 @@
 class Game < ActiveRecord::Base
-  belongs_to :category_game
+  belongs_to :subcategory_game
   has_one :product
 end

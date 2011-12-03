@@ -1,4 +1,3 @@
 class CategoryBook < ActiveRecord::Base
-  belongs_to :subcategory_book
-  has_many :books
+  has_many :subcategory_books
 end

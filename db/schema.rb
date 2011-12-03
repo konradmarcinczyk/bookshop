@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111129105634) do
+ActiveRecord::Schema.define(:version => 20111203215639) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "price"
-    t.integer  "category_accessories_id"
+    t.integer  "category_accessory_id"
     t.text     "description"
   end
 
@@ -68,8 +68,9 @@ ActiveRecord::Schema.define(:version => 20111129105634) do
     t.float    "price"
     t.text     "description"
     t.string   "language"
-    t.integer  "category_books_id"
+    t.integer  "subcategory_book_id"
     t.string   "size"
+    t.integer  "publisher_book_id"
   end
 
   create_table "category_accessories", :force => true do |t|
@@ -82,14 +83,12 @@ ActiveRecord::Schema.define(:version => 20111129105634) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "subcategory_books_id"
   end
 
   create_table "category_games", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "subcategory_games_id"
   end
 
   create_table "games", :force => true do |t|
@@ -108,19 +107,7 @@ ActiveRecord::Schema.define(:version => 20111129105634) do
     t.integer  "game_time_to"
     t.text     "description"
     t.string   "language"
-    t.integer  "category_games_id"
-  end
-
-  create_table "games_categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "games_subcategories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "subcategory_game_id"
   end
 
   create_table "products", :force => true do |t|
@@ -138,12 +125,14 @@ ActiveRecord::Schema.define(:version => 20111129105634) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_book_id"
   end
 
   create_table "subcategory_games", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_game_id"
   end
 
 end
