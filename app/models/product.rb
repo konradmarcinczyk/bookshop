@@ -1,3 +1,3 @@
 class Product < ActiveRecord::Base
-#czy moze nalezeć i do ksiązek i do gier???
+  belongs_to :resource, :polymorphic => true
 end
