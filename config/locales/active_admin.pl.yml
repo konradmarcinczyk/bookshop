@@ -11,6 +11,7 @@ pl:
         one: "%{resource} nie został zapisany z powodu jednego błędu:"
         other: "%{resource} nie został zapisany z powodu %{count} błędów:"
   active_admin:
+    password: "Hasło"
     failure:
       already_authenticated: 'Jesteś już zalogowany.'
       unauthenticated: 'Aby kontynuować musisz się zalogować.'

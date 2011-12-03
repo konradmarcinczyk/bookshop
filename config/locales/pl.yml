@@ -6,6 +6,28 @@ pl:
       call_to_action: "Wybierz akcję z menu"
     blank_slate:
       content: "Zawartość"
+      link: "link"
+    user: "użytkownik"
+    email: "adres e-mail"
+    password: "hasło"
+    password_confirmation: "powtórz hasło"
+    username: "nazwa użytkownika"
+    name: "nazwa"
+    description: "opis"
+    keywords: "słowa kluczowe"
+    previous: "« Poprzednie"
+    back: "« Poprzednia strona"
+    next: "Następne »"
+    subject: "temat"
+    content: "treść"
+    remember_me: "Zapamiętaj mnie"
+
+  sign_up_title: "Załóż konto"
+  sign_in_title: "Zaloguj się"
+  password_title: "Zapomniałeś hasła?"
+  sign_in: "Zaloguj"
+  sign_up: "Zarejestruj"
+  current_password: "Obecne hasło"
   number:
     format:
       separator: ","
