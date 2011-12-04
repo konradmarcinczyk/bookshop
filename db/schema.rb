@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111203234945) do
+ActiveRecord::Schema.define(:version => 20111204000541) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20111203234945) do
     t.text     "description"
     t.string   "language"
     t.integer  "subcategory_game_id"
+    t.integer  "number_of_players"
   end
 
   create_table "products", :force => true do |t|

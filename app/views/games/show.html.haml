@@ -18,10 +18,16 @@
     Wiek graczy od 
     = @game.age_of_players_from
     %br
-    Liczba graczy od 
-    = @game.number_of_players_from
-    do 
-    = @game.number_of_players_to
+    Liczba graczy:
+    - unless (@game.number_of_players.blank?)
+      = @game.number_of_players
+    end
+    - if not (@game.number_of_players.blank?)    
+      od 
+      = @game.number_of_players_from
+      do 
+      = @game.number_of_players_to
+    end
     %br
     Instrukcje:
     = @game.instruction
