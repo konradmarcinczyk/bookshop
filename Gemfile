@@ -26,7 +26,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-  gem 'sass-rails',   '~> 3.1.4'
+gem 'sass-rails',   '~> 3.1.4'
 
 gem 'jquery-rails'
 
