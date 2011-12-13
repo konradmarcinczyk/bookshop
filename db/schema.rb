@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111205120751) do
+ActiveRecord::Schema.define(:version => 20111213125534) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20111205120751) do
     t.string   "size"
     t.integer  "publisher_book_id"
     t.integer  "isbn"
+    t.integer  "category_book_id"
   end
 
   create_table "category_accessories", :force => true do |t|
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20111205120751) do
     t.string   "language"
     t.integer  "subcategory_game_id"
     t.integer  "number_of_players"
+    t.integer  "category_game_id"
   end
 
   create_table "products", :force => true do |t|
