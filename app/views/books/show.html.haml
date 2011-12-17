@@ -1,5 +1,5 @@
 .post
-  %h2.title
+  %h2.tekst-1strona
     = @book.title
     %br
     Autor:
@@ -20,12 +20,11 @@
     %br
     Numer ISBN :
     = @book.isbn
-    %br
     - unless (@book.translation.blank?)
+      %br
       Tłumaczenie : 
-      = @book.translation
+      = @book.translation 
     %br
-    end
     Rok wydania :
     = @book.year_of_publishing
     %br

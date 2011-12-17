@@ -21,6 +21,7 @@ class Book < ActiveRecord::Base
   validates :year_of_publishing, :numericality => { :greater_than => 1900, :less_than => 2100 }
 #dobrze było by less_than => aktualny_rok
   validates :number_of_pages, :numericality => { :greater_than => 0 }
-  validates_inclusion_of :cover, :in => %w("miękka" "twarda"), :message => "%{value} jest niedozwolona, może być miękka albo twarda" 
+# nie działa!!!! 
+# validates_inclusion_of :cover, :in => %w("miękka" "twarda"), :message => "%{value} jest niedozwolona, może być miękka albo twarda" 
 
 end
