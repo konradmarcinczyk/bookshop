@@ -1,7 +1,11 @@
 Bookshop::Application.routes.draw do
 
   ActiveAdmin.routes(self)
-
+  root :to => 'home#index'
+    match '/about_company', :to => 'home#about_company'
+    match '/contact_us', :to => 'home#contact_us'
+    match '/cooperation', :to => 'home#cooperation'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :books
@@ -14,7 +18,7 @@ Bookshop::Application.routes.draw do
   get "products/edit"
   get "products/destroy"
 
-  root :to => 'home#index'
+
 
   get "publishers/index"
   get "publishers/show"

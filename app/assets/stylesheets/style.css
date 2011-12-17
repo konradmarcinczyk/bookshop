@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+body {
+	margin-left: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	background-color: #170909;
+	background-image: url(tlo-strony.jpg);
+	
+	background-position:center;
+	background-repeat:no-repeat;
+	background-position:top;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}.ramka1 {
+	background-image: url(ramka1.png);
+	height: 249px;
+}
+.ramka2 {
+	background-image: url(ramka2.png);
+	font-family: Verdana, Geneva, sans-serif;
+}
+.ramka3 {
+	background-image: url(ramka3.png);
+	height: 30px;
+}
+.ramka3-1 {
+	background-image: url(tlo-ramka3-1.png);
+	height: 30px;
+}
+.ramka3-2 {
+	background-image: url(tlo-ramka3-2.png);
+}
+.ramka3-3 {
+	background-image: url(tlo-ramka3-3.png);
+	height: 30px;
+}
+a {
+	font-family: AntykwaPoltawskiegoTTF, Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	color: #F5C16E;
+}
+a:visited {
+	color: #F5C16E;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF0;
+	text-decoration: none;
+}
+a:active {
+	color: #F5C16E;
+	text-decoration: none;
+}
+a:link {
+	text-decoration: none;
+	color: #F5C16E;
+}
+.baner1 {
+	height: 200px;
+	background-image: url(baner1.png);
+}
+.baner2 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FC0;
+	padding-top: 0px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
+.menu--gora {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #FC0;
+	text-align: center;
+	padding: 5px;
+	width: 190px;
+}
+.menu2 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	background-image: url(guzik.png);
+	height: 0px;
+	width: 180px;
+	text-align: center;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	font-weight: normal;
+	color: #F5C16E;
+}
+.tekst-1strona {
+	font-family: AntykwaPoltawskiegoTTF, Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #F5C16E;
+	text-align: justify;
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+.foto {
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+.foto2 {
+	padding: 1px;
+	border-top-width: thin;
+	border-right-width: thick;
+	border-bottom-width: thick;
+	border-left-width: thin;
+	border-top-style: double;
+	border-right-style: double;
+	border-bottom-style: double;
+	border-left-style: double;
+	border-top-color: #F5C16E;
+	border-right-color: #F5C16E;
+	border-bottom-color: #F5C16E;
+	border-left-color: #F5C16E;
+}
+.teks2 {
+	font-family: AntykwaPoltawskiegoTTF, Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FC6;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}

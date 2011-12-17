@@ -9,7 +9,7 @@
     = @book.price
     zł
     %br
-    Wydawca : 
+    Wydawnictwo : 
     = @book.publisher
     %br
     Język wydania : 
@@ -21,9 +21,6 @@
     Numer ISBN :
     = @book.isbn
     %br
-    Opis : 
-    = @book.description
-    %br
     - unless (@book.translation.blank?)
       Tłumaczenie : 
       = @book.translation
@@ -33,7 +30,14 @@
     = @book.year_of_publishing
     %br
     Liczba stron :
-    = @book.number_of_pages
+    = @book.number_of_pages   
+    %br
+    Okładka : 
+    = @book.cover
+    %br
+    Opis : 
+    = @book.description
+
 
 %p
 = link_to "Pokaż wszystkie książki", books_path
