@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111217231424) do
+ActiveRecord::Schema.define(:version => 20111218153440) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -114,6 +114,9 @@ ActiveRecord::Schema.define(:version => 20111217231424) do
     t.string   "game_type"
     t.integer  "game_time"
   end
+
+# Could not dump table "pictures" because of following StandardError
+#   Unknown type 'has_attached_file' for column 'photo'
 
   create_table "products", :force => true do |t|
     t.datetime "created_at"
