@@ -1,4 +1,11 @@
 pl:
+  views:
+    pagination:
+      previous: "&lt; Poprzednia"
+      next: "Następna &gt;"
+      truncate: "..."
+      first: "Pierwsza"
+      last: "Ostatnia"
   active_admin:
     dashboard: "Panel administratora"
     dashboard_welcome:

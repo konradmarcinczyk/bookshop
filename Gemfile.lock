@@ -165,6 +165,7 @@ DEPENDENCIES
   haml
   i18n
   jquery-rails
+  kaminari
   meta_search (>= 1.1.0.pre)
   paperclip (~> 2.4)
   pg

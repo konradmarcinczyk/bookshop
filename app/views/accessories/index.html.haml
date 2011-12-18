@@ -6,3 +6,6 @@
     = link_to accessory.name, accessory_path(accessory)
     %p.tekst-1strona
       Cena: #{accessory.price}
+%br
+%br
+= paginate @accessories 
