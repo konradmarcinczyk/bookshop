@@ -13,7 +13,6 @@ ActiveAdmin.register Game do
     column :game_time
     column :game_time_from
     column :game_time_to
-    column :language
     column :instruction
     column :year_of_publication
     column :game_type
