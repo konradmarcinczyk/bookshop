@@ -16,6 +16,9 @@ gem 'meta_search',    '>= 1.1.0.pre'
 gem "paperclip", "~> 2.4" #zdjęcia
 gem 'kaminari' #paginacja
 #gem "ransack"  #wyszukiwanie
+gem 'yaml_db'
+
+
 
 group :producton do
   gem 'pg'

@@ -1,14 +1,14 @@
-!!!cooperation
+!!!5
 -# plik na razie skopiowany z aktualnej strony mojej siostry
 %html
   %head
-    %title Bookshop
+    %title CDKiG
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    %title Centrum Dobrej Książki i gry
-    %meta{:content => "Na łamach tej witryny odnajdziecie Państwo nie tylko opisy nowości wydawniczych czy wyszukacie edycje bibliofilskie. \r\nW Centrum Dobrej Ksiązki i Gry mozna równierz odnaleźć doskonałe pomysły na prezenty dla bliskich Wam osób czy kluczowych klientów i pracowników . \r\nPamiętajmy iż upominki którymi obdarowywujemy innych świadaczą o nas samych. Stąd odpowiednio dobrana książka czy gra planszowa mogą sprawić wiele radości \r\nbliskim a wśród obdarowywanych kontrachentów i pracowników utrwali pozytywny wizerunek firmy równierz jako mecenasa kultury. Asortyment który oferujemy Państwu, \r\nto książki z najznakomitszych polskich wydawnictw, częstwo z głęgoko zakorzenioną tradycją i bogatą historią co czyni ofertę wyjątkową .", :name => "keywords"}/
+    %title Centrum Dobrej Książki i Gry
+    %meta{:content => " ", :name => "keywords"}/
     %meta{:content => "Na łamach tej witryny odnajdziecie Państwo nie tylko opisy nowości wydawniczych czy wyszukacie edycje bibliofilskie. \r\nW Centrum Dobrej Ksiązki i Gry mozna równierz odnaleźć doskonałe pomysły na prezenty dla bliskich Wam osób czy kluczowych klientów i pracowników . Pamiętajmy iż upominki \r\nktórymi obdarowywujemy innych świadaczą o nas samych. Stąd odpowiednio dobrana książka czy gra planszowa mogą sprawić wiele radości bliskim a wśród obdarowywanych kontrachentów i \r\npracowników utrwali pozytywny wizerunek firmy równierz jako mecenasa kultury. Asortyment który oferujemy Państwu, to książki z najznakomitszych polskich wydawnictw, częstwo z głęgoko \r\nzakorzenioną tradycją i bogatą historią co czyni ofertę wyjątkową .", :name => "description"}/
   %body
     %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "1000"}
@@ -37,18 +37,24 @@
               %td{:valign => "top", :width => "300"}
                 %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "200"}
                   %tr
-                    #accordion
-                      %h3
+                    %link{:href => "menu.css", :rel => "Stylesheet", :type => "text/css"}
+                    %dl#menu0
+                      %dt 
                         %a{:href => "/books"} Książki
-                        %div category_books_path
-                        %div publisher_books_path
-                      %h3
+                      %dd
+                        %a{:href => "/category_books"} Kategorie
+                        %br
+                        %a{:href => "/publisher_books"} Wydawnictwa
+                      %dt
                         %a{:href => "/games"} Gry
-                        %div category_games_path
-                      %h3
+                      %dd
+                        %a{:href => "/category_games"} Kategorie
+                      %dt
                         %a{:href => "/accessories"} Akcesoria
-                        %div category_accessories_path
-
+                      %dd
+                        %a{:href => "/category_accessories"} Kategorie
+                      :cdata
+                        new Menu('menu0');
               %td{:valign => "top", :width => "650"}
                 %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "750"}
                   %tr

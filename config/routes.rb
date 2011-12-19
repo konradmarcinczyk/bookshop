@@ -11,7 +11,11 @@ Bookshop::Application.routes.draw do
   resources :books
   resources :games
   resources :accessories
-
+  resources :category_books
+  resources :subcategory_books
+  resources :category_games
+  resources :subcategory_games
+  resources :category_accessories
 
   get "publishers/index"
   get "publishers/show"

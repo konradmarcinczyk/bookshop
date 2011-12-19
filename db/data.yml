@@ -1,0 +1,311 @@
+
+--- 
+category_accessories: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 2
+    - "Zak\xC5\x82adki do ksi\xC4\x85\xC5\xBCek"
+    - 2011-12-04 00:19:53.551491
+    - 2011-12-04 00:19:53.551491
+
+--- 
+publisher_books: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Skorpion
+    - 2011-12-03 22:18:52.739471
+    - 2011-12-03 22:18:52.739471
+
+--- 
+subcategory_books: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  - category_book_id
+  records: 
+  - - 3
+    - "J\xC4\x99zyk angielski"
+    - 2011-12-03 22:17:41.533575
+    - 2011-12-03 22:17:41.533575
+    - 1
+  - - 4
+    - "J\xC4\x99zyk niemiecki"
+    - 2011-12-03 22:18:10.553334
+    - 2011-12-03 22:18:10.553334
+    - 1
+  - - 6
+    - Kuchnia
+    - 2011-12-18 14:38:18.703173
+    - 2011-12-18 14:38:18.703173
+    - 2
+  - - 7
+    - Zdrowie i uroda
+    - 2011-12-18 14:38:39.495412
+    - 2011-12-18 14:38:39.495412
+    - 2
+  - - 8
+    - Filologia obca
+    - 2011-12-18 14:39:07.794018
+    - 2011-12-18 14:39:07.794018
+    - 3
+  - - 9
+    - Filologia polska
+    - 2011-12-18 14:39:22.248681
+    - 2011-12-18 14:39:22.248681
+    - 3
+
+--- 
+products: 
+  columns: 
+  - id
+  - created_at
+  - updated_at
+  - resource_id
+  - resource_type
+  records: 
+  - - 3
+    - 2011-12-13 13:27:14.849443
+    - 2011-12-13 13:27:14.849443
+    - 3
+    - Book
+  - - 6
+    - 2011-12-17 22:59:22.480529
+    - 2011-12-17 22:59:22.480529
+    - 4
+    - Book
+  - - 7
+    - 2011-12-17 23:07:02.705421
+    - 2011-12-17 23:07:02.705421
+    - 1
+    - Game
+  - - 8
+    - 2011-12-18 19:48:22.493051
+    - 2011-12-18 19:48:22.493051
+    - 5
+    - Book
+
+--- 
+admin_users: 
+  columns: 
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - admin@example.com
+    - $2a$10$bxL/F6kce6IaRL63d3ZXI.G9gge68dV6U8AMrp/FWdvMTVs3Dqep6
+    - 
+    - 
+    - 
+    - 11
+    - 2011-12-18 18:30:21.160869
+    - 2011-12-18 14:36:32.899330
+    - 127.0.0.1
+    - 127.0.0.1
+    - 2011-11-29 11:16:48.078390
+    - 2011-12-18 18:30:21.164291
+
+--- 
+accessories: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  - price
+  - category_accessory_id
+  - description
+  records: 
+  - - 1
+    - "zak\xC5\x82adka nr 1"
+    - 2011-12-04 00:20:45.667184
+    - 2011-12-04 00:20:45.667184
+    - 10.99
+    - 2
+    - "Niebieska zak\xC5\x82adka do ksi\xC4\x85\xC5\xBCek ze \xC5\x9Blicznym misiem w kropki."
+
+--- 
+category_books: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - "J\xC4\x99zyki obce"
+    - 2011-12-03 22:17:19.109331
+    - 2011-12-03 22:17:19.109331
+  - - 2
+    - Poradniki
+    - 2011-12-18 14:37:31.612265
+    - 2011-12-18 14:37:31.612265
+  - - 3
+    - Filologia
+    - 2011-12-18 14:38:00.403183
+    - 2011-12-18 14:38:00.403183
+
+--- 
+category_games: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - familijne
+    - 2011-12-17 23:05:37.760607
+    - 2011-12-17 23:05:37.760607
+
+--- 
+books: 
+  columns: 
+  - id
+  - title
+  - created_at
+  - updated_at
+  - translation
+  - year_of_publishing
+  - number_of_pages
+  - publisher
+  - author
+  - price
+  - description
+  - language
+  - subcategory_book_id
+  - size
+  - publisher_book_id
+  - isbn
+  - category_book_id
+  - cover
+  records: 
+  - - 3
+    - a
+    - 2011-12-13 13:27:14.390838
+    - 2011-12-13 13:27:14.390838
+    - ""
+    - 2010
+    - 12
+    - Skorpion
+    - "kto\xC5\x9B"
+    - 20.0
+    - aaa
+    - polski
+    - 4
+    - 20 x 20
+    - 1
+    - 1234567890
+    - 1
+    - 
+  - - 4
+    - lalalalalala
+    - 2011-12-17 22:59:21.758308
+    - 2011-12-17 22:59:21.758308
+    - "kto\xC5\x9B przet\xC5\x82umaczy\xC5\x82"
+    - 2010
+    - 20
+    - Skorpion
+    - "kto\xC5\x9B napisa\xC5\x82"
+    - 30.0
+    - |-
+      lalalalalal
+      asd
+      sdf
+      asdf
+      asd
+      f
+      asd
+      f
+      sadf
+    - polski
+    - 4
+    - ""
+    - 1
+    - 3908765432345
+    - 1
+    - twarda
+  - - 5
+    - dgfsd
+    - 2011-12-18 19:48:22.104217
+    - 2011-12-18 19:48:22.104217
+    - ""
+    - 2010
+    - 230
+    - Skorpion
+    - lala
+    - 20.0
+    - lalal
+    - polski
+    - 4
+    - ""
+    - 1
+    - 2938473849
+    - 1
+    - "Mi\xC4\x99kka"
+
+--- 
+games: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  - publisher
+  - price
+  - number_of_players_from
+  - number_of_players_to
+  - age_of_players_from
+  - game_time_from
+  - game_time_to
+  - description
+  - language
+  - subcategory_game_id
+  - number_of_players
+  - category_game_id
+  - instruction
+  - year_of_publication
+  - game_type
+  - game_time
+  records: 
+  - - 1
+    - fajna gra familijna
+    - 2011-12-17 23:07:02.556098
+    - 2011-12-17 23:07:02.556098
+    - wydawca
+    - 20.0
+    - 2
+    - 30
+    - 3
+    - 20
+    - 30
+    - lalalla fajna gra
+    - polski
+    - 
+    - 4
+    - 1
+    - nie ma
+    - 2010
+    - 
+    - 
