@@ -43,16 +43,28 @@
                         %a{:href => "/books"} Książki
                       %dd
                         %a{:href => "/category_books"} Kategorie
+                        -#%dd
+                          -#- for category_book in @category_books 
+                            -#%h2.name
+                              -#= link_to category_book.name, category_book_path(category_book)
                         %br
                         %a{:href => "/publisher_books"} Wydawnictwa
+                        -#%dd
+                          -#- for publisher_book in @publisher_books 
+                            -#%h2.name
+                              -#= link_to publisher_book.name, publisher_book_path(publisher_book)
                       %dt
                         %a{:href => "/games"} Gry
-                      %dd
-                        %a{:href => "/category_games"} Kategorie
+                      %dd                       
+                        -#- for category_game in @category_games 
+                          -#%h2.name
+                            -#= link_to category_game.name, category_game_path(category_game)
                       %dt
                         %a{:href => "/accessories"} Akcesoria
                       %dd
-                        %a{:href => "/category_accessories"} Kategorie
+                        -#- for category_accessory in @category_accessories
+                          -#%h2.name
+                            -#= link_to category_accessory.name, category_accessory_path(category_accessory)
                       :cdata
                         new Menu('menu0');
               %td{:valign => "top", :width => "650"}
