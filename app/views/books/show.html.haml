@@ -1,6 +1,8 @@
 .post
   %h2.tekst-1strona
     = @book.title
+    - unless @book.product.pictures.blank?
+      = image_tag @book.product.pictures.first.photo.url(:small)
     %br
     Autor:
     = @book.author

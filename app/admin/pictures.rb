@@ -1,16 +1,10 @@
 ActiveAdmin.register Picture do
-#  form  :html => { :enctype => "multipart/form-data" } 
-#= form_for :picture, @picture, :url => picture_path, :html => { :multipart => true } do |form|
-#  = form.file_field :photo
 
-    #form :html => { :enctype => "multipart/form-data" } do |f|
-    #  f.input :photo
-    #  f.buttons
-    #end
 
   form :html => { :multipart => true } do |f|
     f.inputs "Product images" do
       f.input :photo, :as => :file, :label => "Photo"
+      f.input :product_id
     end
     f.buttons
   end
@@ -25,10 +19,10 @@ ActiveAdmin.register Picture do
   end
 
   show do
-      div :created_at
-      div :updated_at
-      div :photo do 
+    div  do 
         image_tag picture.photo.url, :alt => picture.photo_file_name
-      end
+ 
+    end
+    default_main_content
   end
 end

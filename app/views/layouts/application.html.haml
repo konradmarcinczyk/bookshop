@@ -38,35 +38,32 @@
               %td{:valign => "top", :width => "300"}
                 %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "200"}
                   %tr
-                    %dl#menu0
-                      %dt 
-                        %a{:href => "/books"} Książki
+                    %dt 
+                      %a{:href => "/books"} Książki
                       %dd
                         %a{:href => "/category_books"} Kategorie
                         %dd
                           - for category_book in CategoryBook.all
                             %h2.name
                               = link_to category_book.name, category_book_path(category_book)
-                        %br
+                          %br
                         %a{:href => "/publisher_books"} Wydawnictwa
-                        -#%dd
-                          -#- for publisher_book in PublisherBook.all
-                            -#%h2.name
-                              -#= link_to publisher_book.name, publisher_book_path(publisher_book)
+                        %dd
+                          - for publisher_book in PublisherBook.all
+                            %h2.name
+                              = link_to publisher_book.name, publisher_book_path(publisher_book)
                       %dt
                         %a{:href => "/games"} Gry
                       %dd                       
-                        -#- for category_game in CategoryGame.all
-                          -#%h2.name
-                            -#= link_to category_game.name, category_game_path(category_game)
+                        - for category_game in CategoryGame.all
+                          %h2.name
+                            = link_to category_game.name, category_game_path(category_game)
                       %dt
                         %a{:href => "/accessories"} Akcesoria
                       %dd
-                        -#- for category_accessory in CategoryAccessory.all
-                          -#%h2.name
-                            -#= link_to category_accessory.name, category_accessory_path(category_accessory)
-                      :cdata
-                        new Menu('menu0');
+                        - for category_accessory in CategoryAccessory.all
+                          %h2.name
+                            = link_to category_accessory.name, category_accessory_path(category_accessory)
               %td{:valign => "top", :width => "650"}
                 %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "750"}
                   %tr
