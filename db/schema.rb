@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218153440) do
+ActiveRecord::Schema.define(:version => 20111220153620) do
 
   create_table "accessories", :force => true do |t|
     t.string    "name"
@@ -56,23 +56,23 @@ ActiveRecord::Schema.define(:version => 20111218153440) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "books", :force => true do |t|
-    t.string    "title"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "translation"
-    t.integer   "year_of_publishing"
-    t.integer   "number_of_pages"
-    t.string    "publisher"
-    t.string    "author"
-    t.float     "price"
-    t.text      "description"
-    t.string    "language"
-    t.integer   "subcategory_book_id"
-    t.string    "size"
-    t.integer   "publisher_book_id"
-    t.text      "isbn"
-    t.integer   "category_book_id"
-    t.string    "cover"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "translation"
+    t.integer  "year_of_publishing"
+    t.integer  "number_of_pages"
+    t.string   "publisher"
+    t.string   "author"
+    t.float    "price"
+    t.text     "description"
+    t.string   "language"
+    t.integer  "subcategory_book_id"
+    t.string   "size"
+    t.integer  "publisher_book_id"
+    t.integer  "category_book_id"
+    t.string   "cover"
+    t.integer  "isbn"
   end
 
   create_table "category_accessories", :force => true do |t|
