@@ -1,0 +1,52 @@
+= form_for @book do |f|
+  -#.clearfix
+  -#  = f.label :resource_id, "id"
+  -#  .input= f.text_field :resource_id, :class => "xlarge"
+  .clearfix
+    = f.label :publisher_book_id, "id wydawnictwa"
+    .input= f.text_field :publisher_book_id, :class => "xlarge"
+  .clearfix
+    = f.label :category_book_id, "id kategorii"
+    .input= f.text_field :category_book_id, :class => "xlarge"
+  .clearfix
+    = f.label :title, "Tytuł"
+    .input= f.text_field :title, :class => "xlarge"
+  .clearfix
+    = f.label :author, "Autor"
+    .input= f.text_field :author, :class => "xlarge"
+  .clearfix
+    = f.label :price, "Cena"
+    .input= f.text_field :price, :class => "xlarge"
+  .clearfix
+    = f.label :publisher, "Wydawnictwo"
+    .input= f.text_field :publisher, :class => "xlarge"
+  .clearfix
+    = f.label :language, "Język wydania" 
+    .input= f.text_field :language, :class => "xlarge"
+
+  .clearfix
+    = f.label :size, "Wymiary"
+    .input= f.text_field :size, :class => "xlarge"
+  .clearfix
+    = f.label :isbn, "Numer ISBN"
+    .input= f.text_field :isbn, :class => "xlarge" 
+  .clearfix
+    = f.label :translation, "Tłumaczenie"
+    .input= f.text_field :translation, :class => "xlarge" 
+  .clearfix
+    = f.label :year_of_publishing, "Rok wydania"
+    .input= f.text_field :year_of_publishing, :class => "xlarge"
+  .clearfix
+    = f.label :number_of_pages, "Liczba stron"
+    .input= f.text_field :number_of_pages, :class => "xlarge"
+  .clearfix
+    = f.label :cover, "Okładka"
+    .input= f.text_field :cover, :class => "xlarge"
+  .clearfix
+    = f.label :description, "Opis"
+    .input= f.text_field :description, :class => "xlarge"
+  .clearfix.center
+    = f.submit "Zapisz", :class => "btn primary"
+
+%p
+= link_to "Wróć do książek", books_path

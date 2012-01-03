@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
 
   private
     def make_product
-      self.create_product(resource_id => self.id)
+      self.create_product(id => self.id)
     end
 
   validates_presence_of :title, :year_of_publishing, :number_of_pages, :publisher, :price, :author, 

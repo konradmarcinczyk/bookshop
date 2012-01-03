@@ -18,6 +18,8 @@ Bookshop::Application.routes.draw do
   resources :category_accessories
   resources :publisher_books
 
+get "books/new"
+
   get "publishers/index"
   get "publishers/show"
   get "books/index"
