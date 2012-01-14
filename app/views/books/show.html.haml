@@ -1,9 +1,10 @@
 .post
   %h2.tekst-1strona
     = @book.title
-    -#- unless @book.product.pictures.blank?
-      -#= image_tag @book.product.pictures.first.photo.url(:small)
     %br
+    - unless @book.product.pictures.blank?
+      = image_tag @book.product.pictures.first.photo.url(:small)
+      %br
     Autor:
     = @book.author
     %br
@@ -12,7 +13,7 @@
     zł
     %br
     Wydawnictwo : 
-    = @book.publisher
+    = link_to @book.publisher_book.name, publisher_book_path(@publisher_book) 
     %br
     Język wydania : 
     = @book.language

@@ -1,11 +1,10 @@
--#%h1.tekst-1strona
--#  Książki:
 - for book in @books 
   .post
   %h2.title
     = link_to book.title, book_path(book)
-    -#- unless @book.product.pictures.blank?
-      -#= image_tag @book.product.pictures.first.photo.url(:thumb)
+    - unless book.product.pictures.blank?
+      %br/
+      = image_tag book.product.pictures.first.photo.url(:thumb)
     %p.tekst-1strona
       Autor: #{book.author}
       %br

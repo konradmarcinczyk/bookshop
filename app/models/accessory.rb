@@ -5,7 +5,7 @@ class Accessory < ActiveRecord::Base
 
   private
     def make_product
-      self.create_product
+      self.create_product()
     end
   validates_presence_of :name, :price, :description, :category_accessory_id
   validates :price, :numericality => { :greater_than => 0, :less_than => 1000 }

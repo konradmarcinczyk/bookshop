@@ -2,6 +2,9 @@
   %h2.tekst-1strona
     = @game.name
     %br
+    - unless @game.product.pictures.blank?
+      = image_tag @game.product.pictures.first.photo.url(:small)
+      %br
     Cena : 
     = @game.price
     zł

@@ -1,7 +1,8 @@
--#%h1.tekst-1strona
--# Akcesoria:
 - for accessory in @accessories 
   .post
+    - unless accessory.product.pictures.blank?
+      %br/
+      = image_tag accessory.product.pictures.first.photo.url(:thumb)
   %h2.title
     = link_to accessory.name, accessory_path(accessory)
     %p.tekst-1strona

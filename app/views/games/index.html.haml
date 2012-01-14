@@ -1,9 +1,10 @@
--#%h1.tekst-1strona
--#  Gry:
 - for game in @games 
   .post
   %h2.title
     = link_to game.name, game_path(game)
+    - unless game.product.pictures.blank?
+      %br/
+      = image_tag game.product.pictures.first.photo.url(:thumb)
     %p.tekst-1strona
       Cena: #{game.price}
       %br

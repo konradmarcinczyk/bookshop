@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111220153620) do
+ActiveRecord::Schema.define(:version => 20120114173802) do
 
   create_table "accessories", :force => true do |t|
     t.string    "name"
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20111220153620) do
     t.string   "translation"
     t.integer  "year_of_publishing"
     t.integer  "number_of_pages"
-    t.string   "publisher"
     t.string   "author"
     t.float    "price"
     t.text     "description"
@@ -72,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20111220153620) do
     t.integer  "publisher_book_id"
     t.integer  "category_book_id"
     t.string   "cover"
-    t.integer  "isbn"
+    t.string   "isbn"
   end
 
   create_table "category_accessories", :force => true do |t|

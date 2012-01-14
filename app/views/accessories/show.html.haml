@@ -2,6 +2,9 @@
   %h2.tekst-1strona
     = @accessory.name
     %br
+    - unless @accessory.product.pictures.blank?
+      = image_tag @accessory.product.pictures.first.photo.url(:small)
+      %br
     Cena : 
     = @accessory.price
     zł
