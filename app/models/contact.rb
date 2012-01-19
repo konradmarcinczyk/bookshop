@@ -1,6 +1,4 @@
 class Contact < ActiveRecord::Base
- include ActiveModel::Validations
- 
   validates_presence_of :email, :sender_name, :contact_type, :content
   attr_accessor :id, :email, :sender_name, :contact_type, :content
  

@@ -9,5 +9,4 @@ class Accessory < ActiveRecord::Base
     end
   validates_presence_of :name, :price, :description, :category_accessory_id
   validates :price, :numericality => { :greater_than => 0, :less_than => 1000 }
-#price do 2 miejsc po przecinku!!!
 end
