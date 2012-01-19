@@ -1,0 +1,15 @@
+= form_for @contact, :url => { :action => "create" }, :html => { :method => :post } do |f|
+  .clearfix
+    = f.label :sender_name, "Twoje imię"
+    .input= f.text_field :sender_name, :class => "xxlarge"
+  .clearfix
+    = f.label :email, "Twój e-mail"
+    .input= f.text_field :email, :class => "xxlarge"
+  .clearfix
+    = f.label :contact_type, "Wybierz typ wiadomości"
+    .input= f.select :contact_type, options_for_select(["Zapytanie o ofertę", "Pytanie odnośnie strony", "Pomysły"]), :class => "xxlarge"
+  .clearfix
+    = f.label :content, "Wpisz treść wiadomości"
+    .input= f.text_area :content, :class => "xlarge"
+  .clearfix.center
+    = f.submit "Wyślij", :class => "btn primary"

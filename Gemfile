@@ -1,9 +1,5 @@
 source 'http://rubygems.org'
-
 gem 'rails', '3.1.1'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 gem 'therubyracer'
@@ -15,9 +11,8 @@ gem 'activeadmin'
 gem 'meta_search',    '>= 1.1.0.pre'
 gem "paperclip", "~> 2.4" #zdjęcia
 gem 'kaminari' #paginacja
+gem 'actionmailer' 
 #gem "ransack"  #wyszukiwanie
-
-
 
 
 group :producton do
@@ -38,9 +33,6 @@ gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'

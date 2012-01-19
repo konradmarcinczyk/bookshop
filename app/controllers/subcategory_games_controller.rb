@@ -20,7 +20,6 @@ class SubcategoryGamesController < ApplicationController
     end
   end
 
-
   def edit
   end
 

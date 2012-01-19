@@ -160,6 +160,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer
   activeadmin
   cancan
   coffee-rails (~> 3.1.1)
