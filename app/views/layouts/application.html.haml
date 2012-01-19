@@ -72,6 +72,7 @@
                     %td.ramka3-2
                       %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "700"}
                         %tr
+                          = flash[:notice]
                           %td.tekst-1strona
                             %p{:style => "font-weight: bold; font-size: 16px;"}
                               =yield 

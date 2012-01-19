@@ -4,6 +4,6 @@ class Notifier < ActionMailer::Base
     @sender = sender
     mail(:to => "cdkigtest@gmail.com",
          :from => sender.email,
-         :subject => "New #{sender.contact_type}")
+         :subject => sender.contact_type)
   end
 end

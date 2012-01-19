@@ -5,11 +5,11 @@ Bookshop::Application.routes.draw do
 
   root :to => 'home#index'
     match '/about_company', :to => 'home#about_company'
-    match '/contact_us', :to => 'home#contact_us'
+    #match '/contact_us', :to => 'home#contact_us'
     match '/cooperation', :to => 'home#cooperation'
 
-  resources :contacts, :only => [:new, :create]
-
+  match "contact_us", :to => "contacts#new"
+    get "contacts/create"
   resources :books, :only => [:index, :show]
   resources :games, :only => [:index, :show]
   resources :accessories, :only => [:index, :show]
