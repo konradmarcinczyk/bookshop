@@ -1,1 +1,4 @@
-%h2 tu będą książki wybranego wydawnictwa
+%h3.title Książki:
+- for book in @publisher_book.books 
+  %h2.title
+    = link_to book.title, book_path(book)

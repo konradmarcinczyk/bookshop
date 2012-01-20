@@ -45,25 +45,25 @@
                         %dd
                           - for category_book in CategoryBook.all
                             %h2.name
-                              = link_to category_book.name, category_book_path(category_book)
+                              = link_to "#{category_book.name} (#{category_book.books.length})", category_book_path(category_book)
                           %br
                         %a{:href => "/publisher_books"} Wydawnictwa
                         %dd
                           - for publisher_book in PublisherBook.all
                             %h2.name
-                              = link_to publisher_book.name, publisher_book_path(publisher_book)
+                              = link_to "#{publisher_book.name} (#{publisher_book.books.length})", publisher_book_path(publisher_book)
                       %dt
                         %a{:href => "/games"} Gry
                       %dd                       
                         - for category_game in CategoryGame.all
-                          %h2.name
-                            = link_to category_game.name, category_game_path(category_game)
+                          %h2.name 
+                            = link_to "#{category_game.name} (#{category_game.games.length})", category_game_path(category_game)
                       %dt
                         %a{:href => "/accessories"} Akcesoria
                       %dd
                         - for category_accessory in CategoryAccessory.all
                           %h2.name
-                            = link_to category_accessory.name, category_accessory_path(category_accessory)
+                            = link_to "#{category_accessory.name} (#{category_accessory.accessories.length})", category_accessory_path(category_accessory)
               %td{:valign => "top", :width => "650"}
                 %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "750"}
                   %tr

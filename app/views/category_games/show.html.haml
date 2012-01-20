@@ -1,1 +1,8 @@
-%h2 tu będą podkategorie z danej kategorii gier
+%h3.title Podkategorie:
+- for subcategory_game in @category_game.subcategory_games 
+  %h2.title
+    = link_to "#{subcategory_game.name} (#{subcategory_game.games.length})", subcategory_game_path(subcategory_game)
+%h3.title Gry:
+- for game in @category_game.games 
+  %h2.title
+    = link_to game.name, game_path(game)

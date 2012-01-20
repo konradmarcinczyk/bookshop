@@ -1,9 +1,5 @@
 Bookshop::Application.routes.draw do
 
-  get "publisher_games/index"
-
-  get "publisher_games/show"
-
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
@@ -23,6 +19,7 @@ Bookshop::Application.routes.draw do
   resources :subcategory_games, :only => [:index, :show]
   resources :category_accessories, :only => [:index, :show]
   resources :publisher_books, :only => [:index, :show]
+  resources :publisher_games, :only => [:index, :show]
 
 
 #  get "users/index"

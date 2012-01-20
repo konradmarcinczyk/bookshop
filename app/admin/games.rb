@@ -26,6 +26,12 @@ ActiveAdmin.register Game do
     f.buttons
   end
 
+  show do
+    panel "Dodaj zdjęcie do gry" do
+      render "game"
+    end
+    default_main_content
+  end
 
   index do
     column :name

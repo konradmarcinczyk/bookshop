@@ -1,6 +1,6 @@
 class AccessoriesController < ApplicationController
   def index
-    @accessories = Accessory.order("name").page(params[:page]).per(20)
+    @accessories = Accessory.order("name").page(params[:page]).per(10)
   end
 
   def show

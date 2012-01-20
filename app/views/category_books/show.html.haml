@@ -1,1 +1,8 @@
-%h2 tu będą podkategorie książek
+%h3.title Podkategorie:
+- for subcategory_book in @category_book.subcategory_books 
+  %h2.title
+    = link_to "#{subcategory_book.name} (#{subcategory_book.books.length})", subcategory_book_path(subcategory_book)
+%h3.title Książki:
+- for book in @category_book.books 
+  %h2.title
+    = link_to book.title, book_path(book)

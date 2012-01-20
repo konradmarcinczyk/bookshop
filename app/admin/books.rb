@@ -21,6 +21,13 @@ ActiveAdmin.register Book do
     f.buttons
   end
 
+  show do
+    panel "Dodaj zdjęcie do książki" do
+      render "book"
+    end
+    default_main_content
+  end
+
   index do
     column :title
     column :price 
