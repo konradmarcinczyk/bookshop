@@ -13,7 +13,7 @@
     = @game.game_type
     %br
     Wydawca : 
-    = @game.publisher
+    = link_to @game.publisher_game.name, publisher_game_path(@publisher_game) 
     %br
     Język wydania : 
     = @game.language
@@ -33,20 +33,18 @@
     Instrukcja:
     = @game.instruction
     %br
-    Czas gry: 
     - unless (@game.game_time.blank?)
-      ok.
+      Czas gry: ok.
       = @game.game_time
+      minut
     - if (@game.game_time.blank?)
-      od 
+      Czas gry: od 
       = @game.game_time_from
       do
-      = @game.game_time_to    
+      = @game.game_time_to
+      minut    
     Opis : 
     = @game.description
     %br
-
--# czs gry w minutach???
-
 %p
 = link_to "Pokaż wszystkie gry", games_path

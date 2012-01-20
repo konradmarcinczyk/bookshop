@@ -18,9 +18,10 @@
     Język wydania : 
     = @book.language
     %br
-    Wymiary :
-    = @book.size
-    %br
+    - unless @book.size.blank?
+      Wymiary :
+      = @book.size
+      %br
     Numer ISBN :
     = @book.isbn
     - unless (@book.translation.blank?)

@@ -1,5 +1,9 @@
 Bookshop::Application.routes.draw do
 
+  get "publisher_games/index"
+
+  get "publisher_games/show"
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 

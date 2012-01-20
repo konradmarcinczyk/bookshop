@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119124210) do
+ActiveRecord::Schema.define(:version => 20120120134238) do
 
   create_table "accessories", :force => true do |t|
     t.string    "name"
@@ -98,25 +98,25 @@ ActiveRecord::Schema.define(:version => 20120119124210) do
   end
 
   create_table "games", :force => true do |t|
-    t.string    "name"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "publisher"
-    t.float     "price"
-    t.integer   "number_of_players_from"
-    t.integer   "number_of_players_to"
-    t.integer   "age_of_players_from"
-    t.integer   "game_time_from"
-    t.integer   "game_time_to"
-    t.text      "description"
-    t.string    "language"
-    t.integer   "subcategory_game_id"
-    t.integer   "number_of_players"
-    t.integer   "category_game_id"
-    t.string    "instruction"
-    t.integer   "year_of_publication"
-    t.string    "game_type"
-    t.integer   "game_time"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "price"
+    t.integer  "number_of_players_from"
+    t.integer  "number_of_players_to"
+    t.integer  "age_of_players_from"
+    t.integer  "game_time_from"
+    t.integer  "game_time_to"
+    t.text     "description"
+    t.string   "language"
+    t.integer  "subcategory_game_id"
+    t.integer  "number_of_players"
+    t.integer  "category_game_id"
+    t.string   "instruction"
+    t.integer  "year_of_publication"
+    t.string   "game_type"
+    t.integer  "game_time"
+    t.integer  "publisher_game_id"
   end
 
   create_table "games_categories", :force => true do |t|
@@ -152,6 +152,12 @@ ActiveRecord::Schema.define(:version => 20120119124210) do
     t.string    "name"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "publisher_games", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "subcategory_books", :force => true do |t|

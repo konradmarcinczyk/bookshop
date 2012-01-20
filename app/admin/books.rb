@@ -1,4 +1,25 @@
+#encoding: utf-8
 ActiveAdmin.register Book do
+
+  form :html => { :multipart => true } do |f|
+    f.inputs "Dodaj książkę" do
+      f.input :category_book_id, :as => :select, :collection => CategoryBook.all.collect
+      f.input :subcategory_book_id, :as => :select, :collection => SubcategoryBook.all.collect
+      f.input :publisher_book_id, :as => :select, :collection => PublisherBook.all.collect
+      f.input :title
+      f.input :author
+      f.input :language
+      f.input :translation
+      f.input :year_of_publishing
+      f.input :number_of_pages
+      f.input :price
+      f.input :description
+      f.input :size 
+      f.input :cover, :as => :select, :collection => ["miękka", "twarda"]
+      f.input :isbn
+    end
+    f.buttons
+  end
 
   index do
     column :title

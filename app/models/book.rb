@@ -16,8 +16,9 @@ class Book < ActiveRecord::Base
 # if category_book(@id) has_any subcategory_book then validates_presence_of :subcategory_book_id  && subcategory_book(@id) belongs to category_book_id!!!! 
   validates :isbn, :format => { :with => /[0-9]{10}| [0-9]{13}/, :message => "Isbn musi być ciągiem 10 lub 13 cyfr" }
   validates :price, :numericality => { :greater_than => 0, :less_than => 1000 }
-  validates :year_of_publishing, :numericality => { :greater_than => 1900, :less_than => (Date.today.year + 1) }
-  validates :number_of_pages, :numericality => { :greater_than => 0 } 
+  validates :year_of_publishing, :numericality => { :greater_than => 1900, 
+            :less_than_or_equal_to => Date.today.year, :only_integer => true }
+  validates :number_of_pages, :numericality => { :greater_than => 0, :only_integer => true } 
  # validates : cover, format => { :with => /[a-ząćęłńóśźż]/, :message => "Pisz z małej litery."
   validates_inclusion_of :cover, :in => %w(miękka twarda), 
                          :message => "%{value} jest niedozwolona, może być miękka albo twarda" 
