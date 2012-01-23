@@ -1,8 +1,7 @@
 Bookshop::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-config.assets.precompile += %w[active_admin.css active_admin.js]
-#config.action_mailer.default_url_options = { :host => 'localhost:3000' }#do wysyłania maili
+  config.assets.precompile += %w[active_admin.css active_admin.js]
 
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -57,7 +56,7 @@ config.assets.precompile += %w[active_admin.css active_admin.js]
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
-
+  config.i18n.default_locale = :nb
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
