@@ -1,44 +1,43 @@
 .post
   %h2.tekst-1strona
     = @book.title
-    %br
+    %br/
     - unless @book.product.pictures.blank?
       = image_tag @book.product.pictures.first.photo.url(:small)
-      %br
+      %br/
     Autor:
     = @book.author
-    %br
+    %br/
     Cena : 
-    = @book.price
-    zł
-    %br
+    = number_to_currency(@book.price)
+    %br/
     Wydawnictwo : 
     = link_to @book.publisher_book.name, publisher_book_path(@publisher_book) 
-    %br
+    %br/
     Język wydania : 
     = @book.language
-    %br
+    %br/
     - unless @book.size.blank?
       Wymiary :
       = @book.size
-      %br
+      %br/
     Numer ISBN :
     = @book.isbn
     - unless (@book.translation.blank?)
-      %br
+      %br/
       Tłumaczenie : 
       = @book.translation 
-    %br
+    %br/
     Rok wydania :
     = @book.year_of_publishing
-    %br
+    %br/
     Liczba stron :
     = @book.number_of_pages   
-    %br
+    %br/
     Okładka : 
     = @book.cover
-    %br
-    Opis : 
+    %br/
+    %br/ 
     = @book.description
 
 

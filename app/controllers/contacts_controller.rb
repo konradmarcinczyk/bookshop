@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(params[:contact])
     if @contact.save
-      redirect_to('/', :notice => "Wiadomość została wysłana.")
+      redirect_to('/contact_us', :notice => "Wiadomość została wysłana.")
     else
       flash[:alert] = "Wypełnij wszystkie pola"
       render 'new'

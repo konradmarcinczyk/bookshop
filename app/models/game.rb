@@ -24,9 +24,9 @@ class Game < ActiveRecord::Base
     end
 
     def category_validation
-      if  category_game.subcategory_games(@category_game_id).any? and (subcategory_game(self.subcategory_game_id).category_game.id != category_game_id)
+      if  !category_game.blank? and (category_game.subcategory_games(@category_game_id).any? and (subcategory_game(self.subcategory_game_id).category_game.id != category_game_id))
         errors.add(:name, "Musisz wybrać podgategorię wybranej kategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
-        elsif !category_game.subcategory_games(@category_game_id).any? and !subcategory_game_id.blank?
+        elsif  !category_game.blank? and !category_game.subcategory_games(@category_game_id).any? and !subcategory_game_id.blank?
           errors.add(:name, "Nie możesz wybrać podgategorii, ponieważ wybrana kategoria nie posiada podkategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
       end
     end
@@ -35,7 +35,7 @@ class Game < ActiveRecord::Base
                         :category_game_id, :age_of_players_from
   validate :number_of_players_cannot_be_blank, :game_time_validation, :category_validation
   validates :age_of_players_from, :numericality => { :greater_than => 0, :less_than => 150, :only_integer => true }
-  validates :price, :numericality => { :greater_than => 0, :less_than => 1000 }
+  validates :price, :numericality => { :greater_than => 0, :less_than => 1000 , :precision => 2}
   validates :year_of_publication, :numericality => { :greater_than => 1900, 
             :less_than_or_equal_to => Date.today.year, :only_integer => true }, :allow_blank => true
 end

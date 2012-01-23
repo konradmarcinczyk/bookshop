@@ -1,15 +1,14 @@
 .post
   %h2.tekst-1strona
     = @accessory.name
-    %br
+    %br/
     - unless @accessory.product.pictures.blank?
       = image_tag @accessory.product.pictures.first.photo.url(:small)
-      %br
+      %br/
     Cena : 
-    = @accessory.price
-    zł
-    %br
-    Opis : 
+    = number_to_currency(@accessory.price)
+    %br/
+    %br/
     = @accessory.description
 
 

@@ -12,9 +12,9 @@ class Book < ActiveRecord::Base
     end
 
     def category_validation
-      if  category_book.subcategory_books(@category_book_id).any? and (subcategory_book(self.subcategory_book_id).category_book.id != category_book_id)
+      if !category_book.blank? and (category_book.subcategory_books(@category_book_id).any? and (subcategory_book(self.subcategory_book_id).category_book.id != category_book_id))
         errors.add(:title, "Musisz wybrać podgategorię wybranej kategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
-        elsif !category_book.subcategory_books(@category_book_id).any? and !subcategory_book_id.blank?
+        elsif !category_book.blank? and !category_book.subcategory_books(@category_book_id).any? and !subcategory_book_id.blank?
           errors.add(:title, "Nie możesz wybrać podgategorii, ponieważ wybrana kategoria nie posiada podkategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
       end
     end
@@ -23,11 +23,10 @@ class Book < ActiveRecord::Base
                         :publisher_book_id, :isbn, :category_book_id, :cover
   validate :category_validation
   validates :isbn, :format => { :with => /[0-9]{10}| [0-9]{13}/, :message => "Isbn musi być ciągiem 10 lub 13 cyfr" }
-  validates :price, :numericality => { :greater_than => 0, :less_than => 1000 }
+  validates :price, :numericality => { :greater_than => 0, :less_than => 1000, :precision => 2 }
   validates :year_of_publishing, :numericality => { :greater_than => 1900, 
             :less_than_or_equal_to => Date.today.year, :only_integer => true }
   validates :number_of_pages, :numericality => { :greater_than => 0, :only_integer => true } 
- # validates : cover, format => { :with => /[a-ząćęłńóśźż]/, :message => "Pisz z małej litery."
   validates_inclusion_of :cover, :in => %w(miękka twarda), 
                          :message => "%{value} jest niedozwolona, może być miękka albo twarda" 
 

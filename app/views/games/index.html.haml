@@ -6,9 +6,9 @@
       %br/
       = image_tag game.product.pictures.first.photo.url(:thumb)
     %p.tekst-1strona
-      Cena: #{game.price} zł
-      %br
+      Cena: #{number_to_currency(game.price)}
+      %br/
       Gatunek gry: #{game.game_type}
-%br
-%br
+%br/
+%br/
 = paginate @games

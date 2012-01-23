@@ -1,26 +1,25 @@
 .post
   %h2.tekst-1strona
     = @game.name
-    %br
+    %br/
     - unless @game.product.pictures.blank?
       = image_tag @game.product.pictures.first.photo.url(:small)
-      %br
+      %br/
     Cena : 
-    = @game.price
-    zł
-    %br
+    = number_to_currency(@game.price)
+    %br/
     Gatunek gry : 
     = @game.game_type
-    %br
+    %br/
     Wydawca : 
     = link_to @game.publisher_game.name, publisher_game_path(@publisher_game) 
-    %br
+    %br/
     Język wydania : 
     = @game.language
-    %br
+    %br/
     Wiek graczy od 
     = @game.age_of_players_from
-    %br
+    %br/
     Liczba graczy:
     - unless (@game.number_of_players.blank?)
       = @game.number_of_players
@@ -29,10 +28,10 @@
       = @game.number_of_players_from
       do 
       = @game.number_of_players_to
-    %br
+    %br/
     Instrukcja:
     = @game.instruction
-    %br
+    %br/
     - unless (@game.game_time.blank?)
       Czas gry: ok.
       = @game.game_time
@@ -42,9 +41,10 @@
       = @game.game_time_from
       do
       = @game.game_time_to
-      minut    
-    Opis : 
+      minut 
+      %br/
+    %br/   
     = @game.description
-    %br
+    %br/
 %p
 = link_to "Pokaż wszystkie gry", games_path

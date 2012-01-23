@@ -6,7 +6,7 @@
   %h2.title
     = link_to accessory.name, accessory_path(accessory)
     %p.tekst-1strona
-      Cena: #{accessory.price} zł
+      Cena: #{number_to_currency(accessory.price)} 
 %br
 %br
 = paginate @accessories 
