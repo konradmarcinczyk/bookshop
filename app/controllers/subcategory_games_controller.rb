@@ -5,6 +5,7 @@ class SubcategoryGamesController < ApplicationController
 
   def show
     @subcategory_game = SubcategoryGame.find(params[:id])
+    @games = @subcategory_game.games.page(params[:page]).per(10) 
   end
 
   def new 

@@ -5,6 +5,7 @@ class PublisherGamesController < ApplicationController
 
   def show
     @publisher_game = PublisherGame.find(params[:id])
+    @games = @publisher_game.games.page(params[:page]).per(10) 
   end
 
   def new

@@ -1,4 +1,14 @@
-%h3.title Akcesoria:
-- for accessory in @category_accessory.accessories 
+- for accessory in @accessories 
+  .post
   %h2.title
     = link_to accessory.name, accessory_path(accessory)
+    - unless accessory.product.pictures.blank?
+      %br/
+      = image_tag accessory.product.pictures.first.photo.url(:thumb)
+    %p.tekst-1strona
+      Opis: #{truncate(accessory.description, :length => 20, :separator => ' ', :ommission => "...")}
+      %br/
+      Cena: #{number_to_currency(accessory.price)} 
+%br/
+%br/
+= paginate @accessories 

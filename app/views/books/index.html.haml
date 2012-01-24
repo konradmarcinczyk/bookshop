@@ -7,9 +7,16 @@
       = image_tag book.product.pictures.first.photo.url(:thumb)
     %p.tekst-1strona
       Autor: #{book.author}
-      %br
+      %br/
+      Wydawnictwo:
+      = link_to book.publisher_book.name, publisher_book_path(book.publisher_book_id) 
+      %br/
+      Rok wydania: #{book.year_of_publishing} 
+      %br/
+      Rodzaj oprawy:  #{book.cover}
+      %br/
       Cena: #{number_to_currency(book.price)} 
-%br
-%br
+%br/
+%br/
 = paginate @books
 

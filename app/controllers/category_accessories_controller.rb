@@ -5,6 +5,7 @@ class CategoryAccessoriesController < ApplicationController
 
   def show
     @category_accessory = CategoryAccessory.find(params[:id])
+    @accessories = @category_accessory.accessories.page(params[:page]).per(10) 
   end
 
   def new 

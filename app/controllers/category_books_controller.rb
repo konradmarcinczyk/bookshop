@@ -5,6 +5,7 @@ class CategoryBooksController < ApplicationController
 
   def show
     @category_book = CategoryBook.find(params[:id])
+    @books = @category_book.books.page(params[:page]).per(10) 
   end
 
   def new 

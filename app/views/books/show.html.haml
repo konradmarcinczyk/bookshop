@@ -5,37 +5,28 @@
     - unless @book.product.pictures.blank?
       = image_tag @book.product.pictures.first.photo.url(:small)
       %br/
-    Autor:
-    = @book.author
+    Autor: #{@book.author}
     %br/
-    Cena : 
-    = number_to_currency(@book.price)
+    Język wydania: #{ @book.language}
     %br/
+    - unless (@book.translation.blank?)
+      Przekład: #{@book.translation} 
+      %br/
     Wydawnictwo : 
     = link_to @book.publisher_book.name, publisher_book_path(@publisher_book) 
     %br/
-    Język wydania : 
-    = @book.language
+    Rok wydania: #{@book.year_of_publishing}
+    %br/
+    Numer ISBN: #{ @book.isbn}
     %br/
     - unless @book.size.blank?
-      Wymiary :
-      = @book.size
+      Format: #{ @book.size} cm
       %br/
-    Numer ISBN :
-    = @book.isbn
-    - unless (@book.translation.blank?)
-      %br/
-      Tłumaczenie : 
-      = @book.translation 
+    Liczba stron: #{@book.number_of_pages}   
     %br/
-    Rok wydania :
-    = @book.year_of_publishing
+    Rodzaj oprawy: #{@book.cover}
     %br/
-    Liczba stron :
-    = @book.number_of_pages   
-    %br/
-    Okładka : 
-    = @book.cover
+    Cena: #{number_to_currency(@book.price)}
     %br/
     %br/ 
     = @book.description
