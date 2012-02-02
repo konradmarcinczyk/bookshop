@@ -2,13 +2,17 @@
 class Payer < ActiveRecord::Base
   belongs_to :company
   has_many :person_contacts
-#  has_many :addresses
-#address belongs_to :client :/
+  has_many :addresses
 
-
-#potrzebna walidacja czy firma jest szkołą/biblioteką 
+  private
+    def library_or_school_validation
+      unless  company.library_or_school(@company_id)
+        errors.add( "Twoja firma nie jest szkołą ani biblioteką, więc nie możesz dodać płatników.")
+      end
+    end
 
   validates_presence_of :name, :phone, :company_id, :nip
+  validate :library_or_school_validation
   validates :nip, :format => { :with =>  /^[0-9]{10}$/, :message => "NIP jest złożony z 10 cyfr"}
   validates_numericality_of :company_id
   validates :phone, :format => { :with =>  /^([0-9]{9}$)|^(\([0-9]{2}\)[0-9]{7})$/, 
