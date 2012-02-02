@@ -13,9 +13,9 @@ class Book < ActiveRecord::Base
 
     def category_validation
       if !category_book.blank? and (category_book.subcategory_books(@category_book_id).any? and (subcategory_book(self.subcategory_book_id).category_book.id != category_book_id))
-        errors.add(:title, "Musisz wybrać podgategorię wybranej kategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
+        errors.add(:title, "Musisz wybrać podgategorię wybranej kategorii !")
         elsif !category_book.blank? and !category_book.subcategory_books(@category_book_id).any? and !subcategory_book_id.blank?
-          errors.add(:title, "Nie możesz wybrać podgategorii, ponieważ wybrana kategoria nie posiada podkategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
+          errors.add(:title, "Nie możesz wybrać podgategorii, ponieważ wybrana kategoria nie posiada podkategorii !")
       end
     end
 

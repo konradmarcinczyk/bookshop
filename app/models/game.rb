@@ -25,9 +25,9 @@ class Game < ActiveRecord::Base
 
     def category_validation
       if  !category_game.blank? and (category_game.subcategory_games(@category_game_id).any? and (subcategory_game(self.subcategory_game_id).category_game.id != category_game_id))
-        errors.add(:name, "Musisz wybrać podgategorię wybranej kategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
+        errors.add(:name, "Musisz wybrać podgategorię wybranej kategorii !")
         elsif  !category_game.blank? and !category_game.subcategory_games(@category_game_id).any? and !subcategory_game_id.blank?
-          errors.add(:name, "Nie możesz wybrać podgategorii, ponieważ wybrana kategoria nie posiada podkategorii !  Przepraszam, że błąd jest w tym miejscu, nie było innej opcji")
+          errors.add(:name, "Nie możesz wybrać podgategorii, ponieważ wybrana kategoria nie posiada podkategorii !")
       end
     end
 
