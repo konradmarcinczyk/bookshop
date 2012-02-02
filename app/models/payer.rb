@@ -1,8 +1,7 @@
 #encoding: utf-8
 class Payer < ActiveRecord::Base
   belongs_to :company
-  has_many :person_contacts
-  has_many :addresses
+  has_many :addresses, :as => :resource
 
   private
     def library_or_school_validation

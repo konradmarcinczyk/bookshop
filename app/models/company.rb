@@ -1,8 +1,7 @@
 #encoding: utf-8
 class Company < ActiveRecord::Base
   has_one :client, :as => :resource
-  has_many :addresses
-  has_many :person_contacts
+  has_many :addresses, :as => :resource
   has_many :payers
   after_create :make_client
 

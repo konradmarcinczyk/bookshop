@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202183619) do
+ActiveRecord::Schema.define(:version => 20120202204324) do
 
   create_table "accessories", :force => true do |t|
     t.string    "name"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20120202183619) do
     t.integer  "client_id"
     t.string   "house_number"
     t.string   "apartment_number"
+    t.integer  "resource_id"
+    t.string   "resource_type"
   end
 
   create_table "admin_users", :force => true do |t|
@@ -122,6 +124,7 @@ ActiveRecord::Schema.define(:version => 20120202183619) do
     t.boolean  "library_or_school"
     t.string   "nip"
     t.string   "mobile_phone"
+    t.text     "contact_comments"
   end
 
   create_table "contacts", :force => true do |t|
@@ -170,16 +173,7 @@ ActiveRecord::Schema.define(:version => 20120202183619) do
     t.string   "phone"
     t.integer  "company_id"
     t.string   "nip"
-  end
-
-  create_table "person_contacts", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "surname"
-    t.string   "phone"
-    t.string   "position"
-    t.integer  "company_id"
+    t.text     "contact_comments"
   end
 
   create_table "pictures", :force => true do |t|

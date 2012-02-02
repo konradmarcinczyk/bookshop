@@ -1,7 +1,7 @@
 #encoding: utf-8
 class User < ActiveRecord::Base
   has_one :client, :as => :resource
-  has_many :addresses
+  has_many :addresses, :as => :resource
   after_create :make_client
 
   private
