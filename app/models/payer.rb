@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Payer < ActiveRecord::Base
   belongs_to :company
   has_many :person_contacts

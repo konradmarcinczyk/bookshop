@@ -7,7 +7,6 @@ Bookshop::Application.routes.draw do
     match '/about_company', :to => 'home#about_company'
     match '/contact_us', :to => 'home#contact_us'
     match '/cooperation', :to => 'home#cooperation'
-
 #  match "/contact_us", :to => "contacts#new"
 
   resources :contacts, :only => [:new, :create]
@@ -22,10 +21,7 @@ Bookshop::Application.routes.draw do
   resources :publisher_books, :only => [:index, :show]
   resources :publisher_games, :only => [:index, :show]
 
-
-#  get "users/index"
  # devise_for :users
- # resources :users
 
 
   # Sample of regular route:
