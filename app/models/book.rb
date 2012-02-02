@@ -29,5 +29,7 @@ class Book < ActiveRecord::Base
   validates :number_of_pages, :numericality => { :greater_than => 0, :only_integer => true } 
   validates_inclusion_of :cover, :in => %w(miękka twarda), 
                          :message => "%{value} jest niedozwolona, może być miękka albo twarda" 
+  validates :size, :format => {:with =>  ^[1-9][0-9]?(\,[1-9]{1})?\s[x]\s[1-9][0-9]?(\,[0-9]{1})?$, 
+            :message => "Podaj wymiary w cm 'wymiar x wymiar'"}
 
 end
