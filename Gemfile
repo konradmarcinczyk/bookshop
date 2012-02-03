@@ -6,13 +6,13 @@ gem 'therubyracer'
 gem 'haml'
 gem 'devise'
 gem 'cancan'
-gem 'i18n'#spolszczenia
+gem 'i18n'                #spolszczenia
 gem 'activeadmin'
 gem 'meta_search',    '>= 1.1.0.pre'
 gem "paperclip", "~> 2.4" #zdjęcia
-gem 'kaminari' #paginacja
+gem 'kaminari'            #paginacja
 gem 'actionmailer' 
-#gem "ransack"  #wyszukiwanie
+#gem "ransack"            #wyszukiwanie
 
 
 group :producton do

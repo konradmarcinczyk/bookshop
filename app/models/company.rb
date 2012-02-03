@@ -3,12 +3,6 @@ class Company < ActiveRecord::Base
   has_one :client, :as => :resource
   has_many :addresses, :as => :resource
   has_many :payers
-  after_create :make_client
-
-  private
-    def make_client
-      self.create_client
-    end
 
    def phone_cannot_be_blank
       if mobile_phone.blank? and fax_phone.blank? and stationary_phone.blank?

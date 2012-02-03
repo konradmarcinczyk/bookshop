@@ -29,7 +29,11 @@
                       = link_to "Kontakt", contact_us_path
                     %td.menu--gora
                       = link_to "Współpraca", cooperation_path 
-
+              - if client_signed_in?
+                Witaj, {#current_client.email}
+                = link_to "Wyloguj", destroy_client_session_path, :method => "delete"
+              - else
+                = link_to "Zaloguj", new_client_session_path
       %tr
         %td.ramka2{:valign => "top"}
 
@@ -75,6 +79,8 @@
                           = flash[:notice]
                           %td.tekst-1strona
                             %p{:style => "font-weight: bold; font-size: 16px;"}
+                              %p.notice= notice
+                              %p.alert= alert
                               =yield 
                   %tr
                     %td.ramka3-3  

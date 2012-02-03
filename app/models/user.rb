@@ -2,12 +2,6 @@
 class User < ActiveRecord::Base
   has_one :client, :as => :resource
   has_many :addresses, :as => :resource
-  after_create :make_client
-
-  private
-    def make_client
-      self.create_client
-    end
 
   validates_presence_of :name, :surname, :email, :phone
   validates_uniqueness_of :email
