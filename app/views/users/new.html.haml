@@ -1,0 +1,28 @@
+%h2 Załóż konto indywidualne
+= form_for @user, :url => { :action => "create" }, :html => { :method => :post } do |f|
+  -# = devise_error_messages!
+
+  .clearfix
+    = f.label :name, "Imię"
+    .input= f.text_field :name
+  .clearfix
+    = f.label :surname, "Nazwisko"
+    .input= f.text_field :surname
+  .clearfix
+    = f.label :phone, "Nr telefonu"
+    .input= f.text_field :phone
+  = f.fields_for :client do |client_form|
+    .clearfix
+      = client_form.label :email, "Adres e-mail"
+      .input= client_form.email_field :email
+    .clearfix
+      = client_form.label :password, "Hasło"
+      .input= client_form.password_field :password
+    .clearfix
+      = client_form.label :password_confirmation, "Potwierdź hasło"
+      .input= client_form.password_field :password_confirmation
+    -#= render :partial => "shared/client", :f => client_form
+  .clearfix.actions
+    = f.submit "Zarejestruj się", :class => "btn primary"
+-#= render :partial => "devise/shared/links"
+

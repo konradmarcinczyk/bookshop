@@ -1,9 +1,11 @@
 Bookshop::Application.routes.draw do
 
-  devise_for :clients
-
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  devise_for :clients
+  resources :users, :only => [:new, :create]
+
 
   root :to => 'home#index'
     match '/about_company', :to => 'home#about_company'
@@ -23,8 +25,6 @@ Bookshop::Application.routes.draw do
   resources :publisher_books, :only => [:index, :show]
   resources :publisher_games, :only => [:index, :show]
 
- # devise_for :users
-
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -33,9 +33,6 @@ Bookshop::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
   # Sample resource route with options:
   #   resources :products do

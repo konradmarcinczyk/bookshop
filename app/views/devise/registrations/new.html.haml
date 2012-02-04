@@ -1,17 +1,19 @@
 %h2 Zarejestruj się
+%br/
+=link_to "zarejestruj się jako klient indywidualny", new_user_path(resource_name)
+%br/
+%br/
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Zarejestruj się"
+  .clearfix
+    = f.label :email, "Adres e-mail"
+    .input= f.email_field :email
+  .clearfix
+    = f.label :password, "Hasło"
+    .input= f.password_field :password
+  .clearfix
+    = f.label :password_confirmation, "Potwierdź hasło"
+    .input= f.password_field :password_confirmation
+  .clearfix.actions
+    = f.submit "Zarejestruj się", :class => "btn primary"
 = render :partial => "devise/shared/links"
