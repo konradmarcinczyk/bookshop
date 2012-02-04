@@ -11,12 +11,9 @@ class Company < ActiveRecord::Base
     end
 
 
-  validates_presence_of :name, :email, :nip, :library_or_school
-  validates_uniqueness_of :name, :email, :nip
+  validates_presence_of :name, :nip, :library_or_school
+  validates_uniqueness_of :name,  :nip
   validate :phone_cannot_be_blank
-  validates_uniqueness_of :email, :name, :nip
-  validates :email, :format => {:with =>  /^\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z$/, 
-            :message => "To nie jest e-mail"}
   validates :nip, :format => { :with =>  /^[0-9]{10}$/, :message => "NIP jest złożony z 10 cyfr"}
   validates :mobile_phone, :format => { :with =>  /^[0-9]{9}$/, 
             :message => "numer telefony komórkowego jest złożony z 9 cyfr"}, :allow_blank => true

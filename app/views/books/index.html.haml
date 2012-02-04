@@ -11,11 +11,11 @@
       Wydawnictwo:
       = link_to book.publisher_book.name, publisher_book_path(book.publisher_book_id) 
       %br/
-      Rok wydania: #{book.year_of_publishing} 
+      rok wydania: #{book.year_of_publishing} 
       %br/
-      Rodzaj oprawy:  #{book.cover}
+      rodzaj oprawy:  #{book.cover}
       %br/
-      Cena: #{number_to_currency(book.price)} 
+      cena: #{number_to_currency(book.price)} 
 %br/
 %br/
 = paginate @books

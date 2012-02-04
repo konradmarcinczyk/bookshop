@@ -1,0 +1,5 @@
+%p
+  Witaj #{@resource.email}!
+%p Twoje konto zostało zablokowane przez zbyt dużą liczbę nieudanych prób logowania
+%p Kliknij w link poniżej, aby odblokować konto:
+%p= link_to 'Odblokuj moje konto', unlock_url(@resource, :unlock_token => @resource.unlock_token)

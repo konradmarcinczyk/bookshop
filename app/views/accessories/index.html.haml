@@ -6,9 +6,9 @@
       %br/
       = image_tag accessory.product.pictures.first.photo.url(:thumb)
     %p.tekst-1strona
-      Opis: #{truncate(accessory.description, :length => 20, :separator => ' ', :ommission => "...")}
+      opis: #{truncate(accessory.description, :length => 20, :separator => ' ', :ommission => "...")}
       %br/
-      Cena: #{number_to_currency(accessory.price)} 
+      cena: #{number_to_currency(accessory.price)} 
 %br/
 %br/
 = paginate @accessories 

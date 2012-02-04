@@ -7,26 +7,26 @@
       %br/
     Autor: #{@book.author}
     %br/
-    Język wydania: #{ @book.language}
+    język wydania: #{ @book.language}
     %br/
     - unless (@book.translation.blank?)
-      Przekład: #{@book.translation} 
+      przekład: #{@book.translation} 
       %br/
     Wydawnictwo : 
     = link_to @book.publisher_book.name, publisher_book_path(@publisher_book) 
     %br/
-    Rok wydania: #{@book.year_of_publishing}
+    rok wydania: #{@book.year_of_publishing}
     %br/
-    Numer ISBN: #{ @book.isbn}
+    numer ISBN: #{ @book.isbn}
     %br/
     - unless @book.size.blank?
-      Format: #{ @book.size} cm
+      format: #{ @book.size} cm
       %br/
-    Liczba stron: #{@book.number_of_pages}   
+    liczba stron: #{@book.number_of_pages}   
     %br/
-    Rodzaj oprawy: #{@book.cover}
+    rodzaj oprawy: #{@book.cover}
     %br/
-    Cena: #{number_to_currency(@book.price)}
+    cena: #{number_to_currency(@book.price)}
     %br/
     %br/ 
     = @book.description

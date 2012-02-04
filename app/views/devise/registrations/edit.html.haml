@@ -1,0 +1,19 @@
+%h2
+  Edytuj #{resource_name.to_s.humanize}
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = devise_error_messages!
+  %div
+    = f.label :email
+    %br/
+    = f.email_field :email
+  %div
+    = f.label :current_password
+    %i
+    %br/
+    = f.password_field :current_password
+  %div= f.submit "zaktualizuj dane"
+%h3 Usuń konto
+%p
+  chcesz usunąć konto? #{link_to "Usuń moje konto", registration_path(resource_name), :confirm => "Jesteś pewien?", :method => :delete}.
+= link_to "Powrót", :back
+= render :partial => "devise/shared/links"

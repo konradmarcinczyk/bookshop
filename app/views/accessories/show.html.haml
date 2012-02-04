@@ -5,7 +5,7 @@
     - unless @accessory.product.pictures.blank?
       = image_tag @accessory.product.pictures.first.photo.url(:small)
       %br/
-    Cena: #{number_to_currency(@accessory.price)}
+    cena: #{number_to_currency(@accessory.price)}
     %br/
     %br/
     = @accessory.description

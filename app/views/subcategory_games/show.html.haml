@@ -6,11 +6,11 @@
       %br/
       = image_tag game.product.pictures.first.photo.url(:thumb)
     %p.tekst-1strona
-      Gatunek gry: #{game.game_type}
+      gatunek gry: #{game.game_type}
       %br/
-      Opis: #{truncate(game.description, :length => 20, :separator => ' ', :ommission => "...")}
+      opis: #{truncate(game.description, :length => 20, :separator => ' ', :ommission => "...")}
       %br/
-      Cena: #{number_to_currency(game.price)}
+      cena: #{number_to_currency(game.price)}
 %br/
 %br/
 = paginate @games

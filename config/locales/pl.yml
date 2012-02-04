@@ -1,8 +1,15 @@
 pl:
+  helpers:
+    label:
+      client:
+        email: "Adres e-mail"
+        password: Hasło
+        password_confirmation: "Potwierdź hasło"
+        remember_me: Zapamiętaj mnie
   views:
     pagination:
-      previous: "&lt; Poprzednia"
-      next: "Następna &gt;"
+      previous: "<< Poprzednia"
+      next: "Następna >>;"
       truncate: "..."
       first: "Pierwsza"
       last: "Ostatnia"
@@ -169,7 +176,7 @@ pl:
         too_long: "jest za długie (maksymalnie %{count} znaków)"
         too_short: "jest za krótkie (minimalnie %{count} znaków)"
         wrong_length: "jest nieprawidłowej długości (powinna wynosić %{count} znaków)"
-        taken: "jest już zajęta"
+        taken: "jest już używany"
         not_a_number: "nie jest liczbą"
         not_an_integer: "nie jest liczbą całkowitą"
         greater_than: "musi być większe niż %{count}"
@@ -181,11 +188,12 @@ pl:
         even: "musi być parzyste"
         record_invalid: "Negatywne sprawdzenie poprawności: %{errors}"
       models:
-        user: "Użytkownik"
+        client: Konto
       attributes:
-        user:
+        client:
           email: "Adres e-mail"
           password: "Hasło"
+          password_confirmation: "Potwierdzenie hasła"
 
   support:
     array:
@@ -197,11 +205,10 @@ pl:
     select:
       prompt: "Proszę wybrać:"
 
-  user: "użytkownik"
   email: "adres e-mail"
+  client: "Konto"
   password: "hasło"
   password_confirmation: "powtórz hasło"
-  username: "nazwa użytkownika"
   name: "nazwa"
   description: "opis"
   keywords: "słowa kluczowe"
@@ -211,12 +218,9 @@ pl:
   subject: "temat"
   content: "treść"
   remember_me: "Zapamiętaj mnie"
-
   sign_up_title: "Załóż konto"
   sign_in_title: "Zaloguj się"
   password_title: "Zapomniałeś hasła?"
   sign_in: "Zaloguj"
   sign_up: "Zarejestruj"
   current_password: "Obecne hasło"
-
-

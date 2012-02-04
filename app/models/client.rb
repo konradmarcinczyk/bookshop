@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Client < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,6 +10,8 @@ class Client < ActiveRecord::Base
 
  # validates_presence_of :resource_id, :resource_type, :status
   validates_inclusion_of :status, :in => %w(new confirmed deleted banned)
-  validates_inclusion_of :resource_type, :in => %w(user company) 
+  validates :email, :format => {:with =>  /^\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z$/, 
+            :message => "To nie jest e-mail"}
+ # validates_inclusion_of :resource_type, :in => %w(user company) 
  # validates_numericality_of :resource_id
 end
