@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  before_filter :prepare_params, :only => :create
+  
+  def prepare_params
+    @client_attributes = params[:user].delete(:client_attributes)
+    @params = params[:user]
+  end
+
   def index
     @users = User.all
   end
@@ -10,18 +17,24 @@ class UsersController < ApplicationController
   def new 
     @user = User.new
     @user.build_client  
-end
+  end
 
   def create
-    @user = User.new(params[:user])
-
+   
+   @user = User.new(@params)
+    
     if @user.save
-       
-      @client.Client.create(:email => params[:user][:client][:email],:password => params[:user][:client][:password], :password_confirmation => params[:user][:client][:password_confirmation], :resource => @user)
-      redirect_to :root
+      # @client = @user.build_client(@client_attributes)
+# @user.client.create 
+      @user.client.create(:email => params[:user][:client][:email],:password => params[:user][:client][:password], :password_confirmation => params[:user][:client][:password_confirmation], :resource => @user)
+    Rails.logger.info @client.errors.inspect
+      redirect_to root_path
     else
+      Rails.logger.info @user.errors.inspect
+      #
       render :action => "new"
     end
+
   end
 
   def edit

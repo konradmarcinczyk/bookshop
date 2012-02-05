@@ -8,10 +8,10 @@ class Client < ActiveRecord::Base
 
   belongs_to :resource, :polymorphic => true
 
- # validates_presence_of :resource_id, :resource_type, :status
+  validates_presence_of :resource_id, :resource_type, :status
   validates_inclusion_of :status, :in => %w(new confirmed deleted banned)
   validates :email, :format => {:with =>  /^\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z$/, 
             :message => "To nie jest e-mail"}
- # validates_inclusion_of :resource_type, :in => %w(user company) 
- # validates_numericality_of :resource_id
+  validates_inclusion_of :resource_type, :in => %w(user company) 
+  validates_numericality_of :resource_id
 end
