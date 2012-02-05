@@ -9,14 +9,16 @@ class UsersController < ApplicationController
 
   def new 
     @user = User.new
-  end
+    @user.build_client  
+end
 
   def create
     @user = User.new(params[:user])
-    
+
     if @user.save
+       
       @client.Client.create(:email => params[:user][:client][:email],:password => params[:user][:client][:password], :password_confirmation => params[:user][:client][:password_confirmation], :resource => @user)
-      redirect_to user_path(@user)
+      redirect_to :root
     else
       render :action => "new"
     end

@@ -11,16 +11,17 @@
   .clearfix
     = f.label :phone, "Nr telefonu"
     .input= f.text_field :phone
-  = f.fields_for :client do |client_form|
-    .clearfix
-      = client_form.label :email, "Adres e-mail"
-      .input= client_form.email_field :email
-    .clearfix
-      = client_form.label :password, "Hasło"
-      .input= client_form.password_field :password
-    .clearfix
-      = client_form.label :password_confirmation, "Potwierdź hasło"
-      .input= client_form.password_field :password_confirmation
+  .clearfix
+    = f.fields_for :client, @user.client do |client_form|
+      .clearfix
+        = client_form.label :email, "Adres e-mail"
+        .input= client_form.email_field :email
+      .clearfix
+        = client_form.label :password, "Hasło"
+        .input= client_form.password_field :password
+      .clearfix
+        = client_form.label :password_confirmation, "Potwierdź hasło"
+        .input= client_form.password_field :password_confirmation
     -#= render :partial => "shared/client", :f => client_form
   .clearfix.actions
     = f.submit "Zarejestruj się", :class => "btn primary"
