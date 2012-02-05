@@ -9,13 +9,13 @@ class UsersController < ApplicationController
 
   def new 
     @user = User.new
-   #    @user.client.build(params[:email, :password])
   end
 
   def create
     @user = User.new(params[:user])
-    @user.build.client(params[:email, :password])
+    
     if @user.save
+      @client.Client.create(:email => params[:user][:client][:email],:password => params[:user][:client][:password], :password_confirmation => params[:user][:client][:password_confirmation], :resource => @user)
       redirect_to user_path(@user)
     else
       render :action => "new"
