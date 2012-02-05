@@ -12,6 +12,6 @@ class Client < ActiveRecord::Base
   validates_inclusion_of :status, :in => %w(new confirmed deleted banned)
   validates :email, :format => {:with =>  /^\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z$/, 
             :message => "To nie jest e-mail"}
-  validates_inclusion_of :resource_type, :in => %w(user company) 
+  validates_inclusion_of :resource_type, :in => %w(user User company Company) 
   validates_numericality_of :resource_id
 end
